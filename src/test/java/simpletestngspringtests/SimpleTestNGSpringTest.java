@@ -1,14 +1,16 @@
 package simpletestngspringtests;
 
-import com.bwielk.testngspring.testngspring.TestngspringApplication;
+import base.BaseTestClass;
 import com.bwielk.testngspring.testngspring.exampleservice.ExampleService;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Test;
 
-@SpringBootTest(classes = TestngspringApplication.class)
-public class SimpleTestNGSpringTest extends AbstractTestNGSpringContextTests {
+
+public class SimpleTestNGSpringTest extends BaseTestClass {
 
     @Autowired
     private ExampleService exampleService;
@@ -30,5 +32,17 @@ public class SimpleTestNGSpringTest extends AbstractTestNGSpringContextTests {
         String nameToCheck = exampleService.generateName();
         System.out.println(nameToCheck);
         assert nameToCheck.contains("Robot");
+    }
+
+    @Test(groups = {"functional_tests"})
+    private void exampleWebTest() {
+        WebElement mainCTA = driver.findElement(By.cssSelector("[data-qa-selector=\"cta-button\"]"));
+        System.out.println("Found element with text: " + mainCTA.getText().toUpperCase());
+        mainCTA.click();
+        String selector = "[data-qa-selector=\"title\"]";
+        new WebDriverWait(driver, 60).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(selector)));
+        WebElement expectedElement = driver.findElement(By.cssSelector(selector));
+        assert expectedElement.isDisplayed();
+        assert expectedElement.getText().equals("Deine Autosuche: Finde deinen neuen Gebrauchtwagen");
     }
 }
