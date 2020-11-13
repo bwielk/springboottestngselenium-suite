@@ -9,7 +9,7 @@
     </groups>
     <test name="TestNG and Spring example">
         <classes>
-            <class name="simpletestngspringtests.SimpleTestNGSpringTest"/>
+            <class name="simpletestngspringtests.SearchFeatureTest"/>
         </classes>
     </test>
 </suite>
