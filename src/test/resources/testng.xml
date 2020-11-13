@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestNG and Spring example">
+    <groups>
+        <run>
+            <include name="functional_tests"/>
+            <exclude name="do_not_run"/>
+        </run>
+    </groups>
+    <test name="TestNG and Spring example">
+        <classes>
+            <class name="simpletestngspringtests.SimpleTestNGSpringTest"/>
+        </classes>
+    </test>
+</suite>
