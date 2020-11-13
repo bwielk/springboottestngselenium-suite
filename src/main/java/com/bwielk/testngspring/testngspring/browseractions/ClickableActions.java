@@ -5,7 +5,7 @@ import static com.bwielk.testngspring.testngspring.commons.WebElementComponent.g
 
 public class ClickableActions {
 
-    private static void clickElement(String cssSelector){
+    public static void clickElement(String cssSelector){
         Waits.waitUntilElementClickable(cssSelector);
         getElementByCssSelector(cssSelector).click();
     }
