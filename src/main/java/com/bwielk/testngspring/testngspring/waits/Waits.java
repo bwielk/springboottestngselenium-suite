@@ -8,13 +8,11 @@ import static com.bwielk.testngspring.testngspring.commons.WebDriverComponent.ge
 
 public class Waits {
 
-    private static WebDriverWait wait = new WebDriverWait(getDriver(), 60);
-
     public static void waitUntilElementVisible(String cssSelector){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(cssSelector)));
+        new WebDriverWait(getDriver(), 60).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(cssSelector)));
     }
 
     public static void waitUntilElementClickable(String cssSelector){
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssSelector)));
+        new WebDriverWait(getDriver(), 60).until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssSelector)));
     }
 }

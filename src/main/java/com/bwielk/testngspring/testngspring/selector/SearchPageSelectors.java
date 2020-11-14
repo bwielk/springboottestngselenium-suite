@@ -6,7 +6,7 @@ public class SearchPageSelectors {
 
     public static final String CAR_MAKER_FILTER_BUTTON = "[id=\"carMakeFilter\"]";
     public static final String CAR_MODEL_ELEMENT = "[value=\"%s\"]";
-    public static final String CAR_MODELS_PANEL = "[class=\"container___2SMPk container___2FB5N containerBottomStart___FqLOJ\"]";
+    public static final String BACK_TO_MAKERS = "[data-qa-selector=\"backToMakes\"]";
 
     public static final String CAR_PRICE_FILTER_BUTTON = "[id=\"priceFilter\"]";
     public static final String CAR_PRICE_RANGE_START = "[id=\"rangeStart\"]";

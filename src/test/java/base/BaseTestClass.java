@@ -2,15 +2,12 @@ package base;
 
 import com.bwielk.testngspring.testngspring.TestngspringApplication;
 import com.bwielk.testngspring.testngspring.commons.WebDriverComponent;
-import org.openqa.selenium.WebDriver;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.lang.reflect.Method;
-
-import static com.bwielk.testngspring.testngspring.commons.WebDriverComponent.getDriver;
 
 @SpringBootTest(classes = TestngspringApplication.class)
 public class BaseTestClass extends AbstractTestNGSpringContextTests {
@@ -22,8 +19,7 @@ public class BaseTestClass extends AbstractTestNGSpringContextTests {
 
     @BeforeMethod(alwaysRun = true)
     public void launchBrowser(Method method){
-        WebDriver driver = WebDriverComponent.launchBrowser(method.getName());
-        driver.get("https://www.autohero.com/de/");
+        WebDriverComponent.launchBrowser(method.getName());
     }
 
 
@@ -35,6 +31,6 @@ public class BaseTestClass extends AbstractTestNGSpringContextTests {
         }else{
             System.out.println(String.format("\n\n\nTest '%s' has FAILED", method.getName()));
         }
-        getDriver().quit();
+        WebDriverComponent.quitDriver();
     }
 }

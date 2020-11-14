@@ -19,6 +19,7 @@
 		<testng.version>7.3.0</testng.version>
 		<webdrivermanager.version>4.2.2</webdrivermanager.version>
 		<selenium.version>3.141.59</selenium.version>
+		<i18n.version>1.27</i18n.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -44,6 +45,13 @@
 			<artifactId>selenium-java</artifactId>
 			<version>${selenium.version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.neovisionaries/nv-i18n -->
+		<dependency>
+			<groupId>com.neovisionaries</groupId>
+			<artifactId>nv-i18n</artifactId>
+			<version>${i18n.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

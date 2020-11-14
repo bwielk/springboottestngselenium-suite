@@ -9,4 +9,9 @@ public class ElementCheckActions {
         Waits.waitUntilElementVisible(cssSelector);
         assert getElementByCssSelector(cssSelector).getText().equals(textToCheck);
     }
+
+    public static void checkElementDisplayed(String cssSelector){
+        Waits.waitUntilElementVisible(cssSelector);
+        assert getElementByCssSelector(cssSelector).isDisplayed();
+    }
 }
